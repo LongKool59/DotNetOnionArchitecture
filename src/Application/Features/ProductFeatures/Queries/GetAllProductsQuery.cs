@@ -22,10 +22,7 @@ namespace Application.Features.ProductFeatures.Queries
             public async Task<IEnumerable<Product>> Handle(GetAllProductsQuery query, CancellationToken cancellationToken)
             {
                 var productList = await _context.Products.ToListAsync();
-                if (productList == null)
-                {
-                    return null;
-                }
+                if (productList == null) return null;
                 return productList;
             }
         }

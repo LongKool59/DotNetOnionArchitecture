@@ -26,8 +26,7 @@ namespace Application.Features.ProductFeatures.Commands
             {
                 var product = _context.Products.FirstOrDefault(a => a.Id == command.Id);
 
-                if (product == null)
-                    return default;
+                if (product == null) return default;
 
                 product.Barcode = command.Barcode;
                 product.Name = command.Name;
